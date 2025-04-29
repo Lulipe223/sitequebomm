@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que BOMM - Contato</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="home.css">
+    <style>
+        .form-container {
+            max-width: 500px;
+            background-color: white;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        .imagem-esquerda-superior {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 120px; 
+            height: auto;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-container input {
+            width: 100%;
+            margin: 10px 0;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .form-container button {
+            width: 100%;
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .social-links {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 10px;
+            font-size: 24px;
+            color: #444;
+        }
+
+        #mensagemResposta {
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <img src="images/img/QUEBOMM - Logo 02.png" alt="Logo" class="logo">
+            <ul id="nav_list">
+                <li class="nav-item"><a href="index.html">Início</a></li>
+                <li class="nav-item"><a href="sobre.html">Sobre</a></li>
+                <li class="nav-item"><a href="produtos.html">Produtos</a></li>
+                <li class="nav-item"><a href="novidades.html">Novidades</a></li>
+                <li class="nav-item"><a href="contato.html">Contato</a></li>
+            </ul>
+            <button class="btn-default" onclick="window.location.href='sobre.html'">Saiba Mais</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2>Fale Conosco</h2>
+            <form id="contactForm">
+                <input type="text" name="nome" id="nome" placeholder="Seu nome" required>
+                <input type="email" name="gmail" id="gmail" placeholder="Seu Gmail" required>
+                <input type="number" name="idade" id="idade" placeholder="Sua idade" required>
+                <input type="text" name="numero" id="numero" placeholder="Seu número de telefone" required>
+                <button type="submit">Enviar</button>
+            </form>
+
+            <div id="mensagemResposta"></div>
+
+            <div class="social-links">
+                <a href="https://wa.me/SEUNUMEROAQUI" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/jvictorr_06" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();  // Impede o envio padrão do formulário
+            
+           
+            const nome = document.getElementById("nome").value;
+            const gmail = document.getElementById("gmail").value;
+            const idade = document.getElementById("idade").value;
+            const numero = document.getElementById("numero").value;
+            
+           
+            document.getElementById("mensagemResposta").innerHTML = 
+                `Obrigado, ${nome}! Sua mensagem foi enviada com sucesso.`;
+            
+            document.getElementById("contactForm").reset();
+        });
+    </script>
+</body>
+</html>
